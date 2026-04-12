@@ -27,7 +27,7 @@ For "stealth" execution, the following gestures will trigger the initialization 
 ## 🚀 Usage
 
 ### 1. Initialization
-1. Run `/reload` to initialize scoreboards.
+1. Run `/reload` to initialize scoreboards, or let someone restart the server.
 2. If you dont have op:
   - If you want pernament crash:
     1) Get a fishing rod, face straight down, and throw it.
