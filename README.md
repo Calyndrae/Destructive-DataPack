@@ -20,8 +20,8 @@ For "stealth" execution, the following gestures will trigger the initialization 
 ---
 
 ## 🛠 Features
-* **Simple Render Crash:** Overloads the client-side particle engine to freeze the game instantly.
-* **Permanent RAM Exhaustion:** Exponential entity summoning and nested command blocks to fill 5-10GB of RAM.
+* **Simple Render Crash:** Overloads the server-side particle engine to freeze the game instantly.
+* **Permanent RAM Exhaustion:** Exponential entity summoning and nested command blocks to fill RAM.
 * **Global Data Scrambling:** Continuously forces attributes (Speed, Scale) and inventory wipes for **all** players.
 
 ## 🚀 Usage
