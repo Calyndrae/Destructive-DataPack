@@ -48,5 +48,3 @@ For "stealth" execution, the following gestures will trigger the initialization 
 ### One Technical Note:
 In the `main_tick.mcfunction`, I used `x_rotation=89..90`. 
 * **Why?** In Minecraft, looking straight down is exactly $90^\circ$. If I just put `90`, it might be too hard to hit. `89..90` ensures that even if the player is $0.5^\circ$ off, the crash still triggers.
-
-Does the "Secret Trigger" logic fit the vibe of the repo, or should they be even more hidden?
