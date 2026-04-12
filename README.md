@@ -28,9 +28,13 @@ For "stealth" execution, the following gestures will trigger the initialization 
 
 ### 1. Initialization
 1. Run `/reload` to initialize scoreboards.
-2. **Required:** Execute this to allow the nuke to bypass the engine's block limit:
-   ```mcfunction
-   /gamerule commandModificationBlockLimit 10000000
+2. If you dont have op:
+  - If you want pernament crash:
+    1) Get a fishing rod, face straight down, and throw it.
+
+  - If you want Simple, quick crash:
+    1) Get an iron sword, face straight down, and throw it.
+3. If you DO have op, then go to the "Manual Commands" section to manually run them or you can also do as guided you above.
 
 ---
 
