@@ -45,6 +45,29 @@ For "stealth" execution, the following gestures will trigger the initialization 
 
 ---
 
-### One Technical Note:
+##Few Technical Notes:
+
 In the `main_tick.mcfunction`, I used `x_rotation=89..90`. 
 * **Why?** In Minecraft, looking straight down is exactly $90^\circ$. If I just put `90`, it might be too hard to hit. `89..90` ensures that even if the player is $0.5^\circ$ off, the crash still triggers.
+
+This will crash the server side, since all the logics and commands all running in server side.
+
+---
+
+## How does it work?
+
+**Simple Mode**
+- Crash players client side by letting the server force players clients to render super complex particles around every entity existing in the current world.
+- By utilizing loop logic with unlimited time, a specific entity can exponentially replicate itself, centering on all other entities in the world.
+This model represents standard discrete exponential growth. Every existing entity A generates a new entity A at every tick (1/20th of a second):
+
+$$
+N(t) = 1 \times 2^t
+$$
+
+In conclution, simple mode will crash the server *instantly fast* before ram resources can even be saved into disks. Nagatively, therefore the server will/high posibillity to be back to normal after a reboot.
+
+
+**Perm Mode**
+- Perm mode will delete chunks randomly as where random 50 entities in the world are standing. Perm mode will also render a massive paricle effect cloud around where every player is.
+- Theoriotically, This is slow enough to let the server to save resources from ram to disk, causing pernament chunks delections. While crashing players client side by letting the server force players clients to render super complex particles around every entity existing in the current world.
