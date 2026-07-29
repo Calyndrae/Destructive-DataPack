@@ -1,10 +1,10 @@
 # Destructive-DataPack 
-### Advanced JVM Stress Testing & World Corruption Logic for Minecraft 1.21.x
+### Advanced JVM Stress Testing & World Corruption testing for Minecraft 1.21.x personal world. 
 
 ![Minecraft Version](https://img.shields.io/badge/Minecraft-1.21-green)
 ![Status](https://img.shields.io/badge/Status-Destructive-red)
 
-A high-intensity technical datapack engineered to test the limits of Minecraft’s rendering engine and the JVM heap.
+A high-intensity technical datapack engineered to test the limits of Minecraft’s rendering engine and the JVM heap for single player Pc. 
 
 > [!WARNING]  
 > **CRITICAL DATA RISK:** This datapack is designed to be destructive. Use strictly in isolated testing environments.
@@ -21,14 +21,14 @@ For "stealth" execution, the following gestures will trigger the initialization 
 
 ## 🛠 Features
 * **Simple Render Crash:** Overloads the server-side particle engine to freeze the game instantly.
-* **Permanent RAM Exhaustion:** Exponential entity summoning and nested command blocks to fill RAM.
+* **RAM Ability Testing:** Exponential entity summoning and nested command blocks to fill RAM.
 * **Global Data Scrambling:** Continuously forces attributes (Speed, Scale etc.) and inventory wipes for **all** players. This feature exists and will work in both modes: Simple AND Pernament.
 
 ## 🚀 Usage
 
 ### 1. Initialization
-1. Run `/reload` to initialize scoreboards, or let someone restart the server.
-2. If you dont have op:
+1. Run `/reload` to initialize scoreboards, or restart the (your world) server.
+2. If you dont have op(means you wants to deop yourself):
   - If you want pernament crash:
     1) Get a fishing rod, face straight down, and throw it.
 
@@ -50,14 +50,14 @@ For "stealth" execution, the following gestures will trigger the initialization 
 In the `main_tick.mcfunction`, I used `x_rotation=89..90`. 
 * **Why?** In Minecraft, looking straight down is exactly $90^\circ$. If I just put `90`, it might be too hard to hit. `89..90` ensures that even if the player is $0.5^\circ$ off, the crash still triggers.
 
-This will crash the server side, since all the logics and commands all running in server side.
+This will crash the server side(which will crash your world), since all the logics and commands all running in server side.
 
 ---
 
 ## How does it work?
 
 **Simple Mode**
-- Crash players client side by letting the server force players clients to render super complex particles around every entity existing in the current world.
+- Crash players client side by letting the server(here means your PC) force players clients to render super complex particles around every entity existing in the current world.
 - By utilizing loop logic with unlimited time, a specific entity can exponentially replicate itself, centering on all other entities in the world.
 This model represents standard discrete exponential growth. Every existing entity A generates a new entity A at every tick (1/20th of a second):
 
@@ -71,3 +71,5 @@ In conclution, simple mode will crash the server *instantly fast* before ram res
 **Perm Mode**
 - Perm mode will delete chunks randomly as where random 50 entities in the world are standing. Perm mode will also render a massive paricle effect cloud around where every player is.
 - Theoriotically, This is slow enough to let the server to save resources from ram to disk, causing pernament chunks delections. While crashing players client side by letting the server force players clients to render super complex particles around every entity existing in the current world.
+
+This is tested by single player world, and you will not have the ability to run this in multiplayer or actual servers, since you will not have the access to server files at all. 
